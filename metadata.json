@@ -1,0 +1,9 @@
+{
+    "name": "qwen_3",
+    "version": "1.0.0",
+    "description": "Qwen3TTS addon for text-to-speech synthesis.",
+    "author": "Pathos14489",
+    "project_url": "https://link/to/your/project/this/addon/is/for",
+    "enabled": true,
+    "dependencies": []
+}
