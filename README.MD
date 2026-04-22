@@ -2,10 +2,11 @@
 
 This is an addon for Pantella that adds Qwen3 TTS as a tts_type that can be use for Fallout TTW and Skyrim SE/AE.
 
+I've released this as a seperate release partially because the license isn't the same as the rest of Pantella and I wasn't sure if I could include it as a library directly into ther rest of Pantella because of that, and also to serve as an example of how to release an addon of this nature.
+
 # How To Install
 
-1. Click the green Code button at the top right and then download zip. Extract the folder out of the zip into the addons directory in your local Pantella repository.
-2. Enjoy! Enable it in your tts_engines section in your config.json to enable support. You might have to install some requirements to your Python environment if it asks for any, if you need support please reach out in the [Pantella Discord](https://discord.gg/M7Zw8mBY6r).
+Find the latest release and follow the installation instructions [over here](https://github.com/Pathos14489/Pantella-qwen_3_tts/releases)
 
 # Credits
 
