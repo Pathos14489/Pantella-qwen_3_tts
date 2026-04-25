@@ -24,7 +24,7 @@ from torch import nn
 from torch.nn import Parameter
 from torch.nn import functional as F
 from transformers.modeling_utils import ALL_ATTENTION_FUNCTIONS, PreTrainedModel
-from transformers.utils import ModelOutput, auto_docstring, logging
+from transformers.utils import ModelOutput, logging # auto_docstring - UnboundLocalError: local variable 'docstring' referenced before assignment at Ln1532 in ./transformers/utils/args_doc.py
 from transformers.utils.hub import cached_file
 
 from torch.nn.utils.rnn import pad_sequence
@@ -44,7 +44,7 @@ logger = logging.get_logger(__name__)
 
 
 @dataclass
-@auto_docstring
+# @auto_docstring
 class Qwen3TTSTokenizerV1EncoderOutput(ModelOutput):
     r"""
     audio_codes (`List[torch.LongTensor]`):
@@ -61,7 +61,7 @@ class Qwen3TTSTokenizerV1EncoderOutput(ModelOutput):
 
 
 @dataclass
-@auto_docstring
+# @auto_docstring
 class Qwen3TTSTokenizerV1DecoderOutput(ModelOutput):
     r"""
     audio_values (`List[torch.FloatTensor]`):
@@ -72,7 +72,7 @@ class Qwen3TTSTokenizerV1DecoderOutput(ModelOutput):
     audio_values: List[torch.FloatTensor] = None
 
 
-@auto_docstring
+# @auto_docstring
 class Qwen3TTSTokenizerV1DecoderPreTrainedModel(PreTrainedModel):
     config: Qwen3TTSTokenizerV1DecoderConfig
     base_model_prefix = "model"
@@ -84,7 +84,7 @@ class Qwen3TTSTokenizerV1DecoderPreTrainedModel(PreTrainedModel):
     _supports_attention_backend = True
 
 
-@auto_docstring
+# @auto_docstring
 class Qwen3TTSTokenizerV1EncoderPreTrainedModel(PreTrainedModel):
     config: Qwen3TTSTokenizerV1EncoderConfig
     base_model_prefix = "model"
@@ -992,7 +992,7 @@ class AMPBlock(torch.nn.Module):
         return x
 
 
-@auto_docstring
+# @auto_docstring
 class Qwen3TTSTokenizerV1DecoderBigVGANModel(Qwen3TTSTokenizerV1DecoderPreTrainedModel):
     config: Qwen3TTSTokenizerV1DecoderBigVGANConfig
 
@@ -1067,7 +1067,7 @@ class Qwen3TTSTokenizerV1DecoderBigVGANModel(Qwen3TTSTokenizerV1DecoderPreTraine
         return torch.clamp(output_waveform, min=-1.0, max=1.0).squeeze(1)
 
 
-@auto_docstring
+# @auto_docstring
 class Qwen3TTSTokenizerV1DecoderDiTModel(Qwen3TTSTokenizerV1DecoderPreTrainedModel):
     config: Qwen3TTSTokenizerV1DecoderDiTConfig
     _no_split_modules = ["DiTDecoderLayer"]
@@ -1226,7 +1226,7 @@ class Qwen3TTSTokenizerV1DecoderDiTModel(Qwen3TTSTokenizerV1DecoderPreTrainedMod
         return generated_mel_spectrogram
 
 
-@auto_docstring
+# @auto_docstring
 class Qwen3TTSTokenizerV1Decoder(Qwen3TTSTokenizerV1DecoderPreTrainedModel):
     config: Qwen3TTSTokenizerV1DecoderConfig
     base_model_prefix = "model"
@@ -1340,7 +1340,7 @@ class Qwen3TTSTokenizerV1Encoder(Qwen3TTSTokenizerV1EncoderPreTrainedModel):
         return indices, indice_lens
 
 
-@auto_docstring
+# @auto_docstring
 class Qwen3TTSTokenizerV1PreTrainedModel(PreTrainedModel):
     config: Qwen3TTSTokenizerV1Config
     base_model_prefix = "model"
@@ -1352,11 +1352,11 @@ class Qwen3TTSTokenizerV1PreTrainedModel(PreTrainedModel):
     _supports_attention_backend = True
 
 
-@auto_docstring(
-    custom_intro="""
-    The Qwen3TTSTokenizerV1 model.
-    """
-)
+# @auto_docstring(
+#     custom_intro="""
+#     The Qwen3TTSTokenizerV1 model.
+#     """
+# )
 class Qwen3TTSTokenizerV1Model(Qwen3TTSTokenizerV1PreTrainedModel):
     def __init__(self, config: Qwen3TTSTokenizerV1Config):
         super().__init__(config)
