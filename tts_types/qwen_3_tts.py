@@ -17,6 +17,7 @@ except Exception as e:
 logging.info("Imported required libraries in qwen_3_tts.py")
 
 tts_slug = "qwen_3_tts"
+tts_name = "Qwen3 TTS"
 default_settings = {
     "qwen_3_tts_banned_voice_models": [],
 }
